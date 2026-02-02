@@ -1,5 +1,4 @@
 import express from "express";
-import dotenv from "dotenv";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -14,8 +13,7 @@ import bookRoutes from "./routes/books.js";
 import categoryRoutes from "./routes/categories.js";
 import analyticsRoutes from "./routes/analytics.js";
 
-// Load env vars
-dotenv.config();
+import "dotenv/config";
 
 // Get __dirname equivalent in ES6
 const __filename = fileURLToPath(import.meta.url);
@@ -94,23 +92,8 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 5000;
 
 const server = app.listen(PORT, () => {
-  console.log(`
-  ╔════════════════════════════════════════════════════════════  ╗
-  ║                                                              ║
-  ║   📚 Library Management System API                           ║
-  ║                                                              ║
-  ║   Server running in ${process.env.NODE_ENV} mode             ║
-  ║   Port: ${PORT}                                              ║
-  ║   URL: http://localhost:${PORT}                              ║
-  ║                                                              ║
-  ║   Available Routes:                                          ║
-  ║   - Auth: http://localhost:${PORT}/api/auth                  ║
-  ║   - Books: http://localhost:${PORT}/api/books                ║
-  ║   - Categories: http://localhost:${PORT}/api/categories      ║
-  ║   - Analytics: http://localhost:${PORT}/api/analytics        ║
-  ║                                                              ║
-  ╚════════════════════════════════════════════════════════════╝
-  `);
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+  console.log(`URL: http://localhost:${PORT}`);
 });
 
 // Handle unhandled promise rejections
