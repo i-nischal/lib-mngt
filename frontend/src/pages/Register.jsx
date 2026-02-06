@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BookOpen, Mail, Lock, User } from "lucide-react";
 import Button from "../components/common/Button";
-import { register as registerService } from "../services/authService";
+import { register as registerService } from "../../services/authService";
 import { useAuth } from "../hooks/useAuth";
 
 const Register = () => {
