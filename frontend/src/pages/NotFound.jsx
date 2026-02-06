@@ -4,7 +4,7 @@ import Button from "../components/common/Button";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-linear-to-br from-green-50 to-white flex items-center justify-center px-4">
       <div className="text-center">
         <BookOpen className="w-24 h-24 text-green-600 mx-auto mb-8" />
         <h1 className="text-9xl font-bold text-gray-900 mb-4">404</h1>
